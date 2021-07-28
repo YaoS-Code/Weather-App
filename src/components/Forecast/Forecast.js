@@ -8,6 +8,7 @@ const Forecast = () => {
     let [loading, setLoading] = useState(false);
     let [city, setCity] = useState('');
     let [country, setCountry] = useState('');
+    let [unit, setUnit] = useState('metric');
     let [responseObj, setResponseObj] = useState({});
     
     
@@ -27,13 +28,13 @@ const Forecast = () => {
         
         const uriEncodedCity = encodeURIComponent(city);
 
-        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=metric&q=${uriEncodedCity}`, {
-        "method": "GET",
-        "headers": {
-        "x-rapidapi-key": "a194168a9emsh09d0e7896fb4cc2p158113jsnc406521d344d",
-        "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
-        }
-        })
+        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
+            "method": "GET",
+            "headers": {
+            "x-rapidapi-key": "a194168a9emsh09d0e7896fb4cc2p158113jsnc406521d344d",
+            "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
+            }
+            })
         .then(response => response.json())
         .then(response => {
             if (response.cod !== 200) {
@@ -57,7 +58,9 @@ const Forecast = () => {
     <div className="Forecast">
 
         <form onSubmit={getForecast}>
-            <div>
+
+
+            <div className="TopInput">
                 <input
                     type="text"
                     placeholder="City"
@@ -74,6 +77,29 @@ const Forecast = () => {
                 />
                 <button type="submit">Get Weather</button>
             </div>
+            <div className="BottomLabel">
+                <label>
+                    <input
+                        type="radio"
+                        name="units"
+                        checked={unit === "imperial"}
+                        value="imperial"
+                        onChange={(e) => setUnit(e.target.value)}
+                        />
+                        Fahrenheit
+                </label>
+                <label>
+                    <input
+                        type="radio"
+                        name="units"
+                        checked={unit === "metric"}
+                        value="metric"
+                        onChange={(e) => setUnit(e.target.value)}
+                        />
+                        Celcius
+                </label>
+            </div>            
+
         </form>
 
 

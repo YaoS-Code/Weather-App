@@ -5,7 +5,7 @@
     flex-direction: column;  
 }
 
-input{
+.TopInput input{
     border: 0;
     outline: 0;
     background: transparent;
@@ -23,4 +23,20 @@ button{
     width: 8vw;
     margin: 2vw 1vw;
     font-size: 1vw;
+}
+
+.BottomLabel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.BottomLabel label{
+    color: rgb(255,255,255,0.8);
+    font-size: 1.4vw;
+
+}
+.BottomLabel label input{
+    text-align: center;
+
 }
