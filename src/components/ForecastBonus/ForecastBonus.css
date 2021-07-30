@@ -1,0 +1,53 @@
+.ForecastBonus{
+    height: 100%;
+    width: 100%;
+    display: flex;  
+    flex-direction: column; 
+    align-items: center;
+}
+form{
+    margin-top:5vh;
+    width: 100%;
+}
+
+.TopInput{
+    width: 100%;
+}
+
+.TopInput input{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid rgb(241, 101, 86);
+    font-size: 1.4vw;
+    width: 7vw;
+    margin-left: 2vw;
+    caret-color: rgb(255,255,255,0.8);
+    color: rgb(255,255,255,0.8);
+}
+
+button{
+    background: rgb(241, 101, 86);
+    color: rgb(255,255,255,0.8);
+    width: 8vw;
+    height: 2vw;
+    margin: 1vh 1vw;
+    font-size: 1vw;
+}
+button:hover{
+    background: transparent;
+    color: rgb(241, 101, 86);
+
+}
+
+.BottomLabel{
+    margin-top:1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.BottomLabel label{
+    color: rgb(255,255,255,0.8);
+    font-size: 1.4vw;
+    width: 10vw;
+}

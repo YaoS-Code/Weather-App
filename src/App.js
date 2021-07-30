@@ -5,13 +5,9 @@ import Forecast from "./components/Forecast/Forecast";
 function App() {
  return (
    <div className="App">
-     <div className="AppLeft">
-       <div id="AppTitle">Weather Finder</div>
-       <div id="AppText">Find out temperature, conditions and more</div>
-     </div>
-     <div className="AppRight">
+       <div id="AppTitle">Find Current Weather Conditions</div>
        <Forecast />
-     </div>
+  
 
    </div>
  );

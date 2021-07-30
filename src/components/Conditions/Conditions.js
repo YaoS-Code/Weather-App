@@ -11,20 +11,11 @@ const Conditions = (props) => {
             {props.loading && <p>Loading...</p>}
 
             {props.responseObj.cod === 200 ?
-                <div className={classes.weatherReport}>
-                    <div className={classes.ReportLeft}>
-                        <div className={classes.ReportText}>Location: </div>
-                        <div className={classes.ReportText}>Temperature: </div>
-                        <div className={classes.ReportText}>Humidity: </div>
-                        <div className={classes.ReportText}>Conditions: </div>
-                    </div>
-                    <div className={classes.ReportRight}>
-                        <div className={classes.ReportText}>{props.responseObj.name},  {props.responseObj.sys.country}</div>
-                        <div className={classes.ReportText}>{Math.round(props.responseObj.main.temp)}</div>
-                        <div className={classes.ReportText}>{props.responseObj.main.humidity}</div>
-                        <div className={classes.ReportText}>{props.responseObj.weather[0].description}</div>
-                    </div>
-                </div>
+                
+            <div id={classes.Report}>
+                It is currently {Math.round(props.responseObj.main.temp)} degrees out with {props.responseObj.weather[0].description}.
+            </div>
+        
             : null
             }
        </div>

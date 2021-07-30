@@ -1,18 +1,36 @@
 .Container {
+    min-height: 100px;
     display: flex;
     flex-direction: column;
+    color:white;
+    align-self: flex-start;
+    margin-left: 2vw;
  }
 
- #Report {
-    color: black;
+ .weatherReport {
+    
+    margin: 0 auto ;
+    color:white;
+    display: flex;
     flex-direction: row;
-    text-align: center;
-    font-size: larger;
+}
+
+.ReportLeft{
+    color:rgb(241, 101, 86);
+}
+.ReportRight{
+    color:white;
+}
+
+.ReportText{
+    font-size: 1.4vw;
+    padding:2vw 2vw 1.5vw 0;
+    border-bottom: solid rgb(128, 128, 128,0.5);
 }
 
 
  small {
-    margin: 0 auto;
+    margin: auto;
     font-size: 1.4vw;
     color: rgb(241, 101, 86);
 }

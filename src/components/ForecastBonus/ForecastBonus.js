@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import Conditions from '../Conditions/Conditions';
-import "./Forecast.css";
+import ConditionsBonus from '../ConditionsBonus/ConditionsBonus';
+import "./ForecastBonus.css";
 
-const Forecast = () => {
+const ForecastBonus = () => {
 
     let [error, setError] = useState(false);
     let [loading, setLoading] = useState(false);
     let [city, setCity] = useState('');
+    let [country, setCountry] = useState('');
     let [unit, setUnit] = useState('metric');
     let [responseObj, setResponseObj] = useState({});
     
@@ -54,19 +55,29 @@ const Forecast = () => {
    }
 
    return (
-    <div className="Forecast">
+    <div className="ForecastBonus">
 
         <form onSubmit={getForecast}>
 
-            <input 
-                id="inputText"
+
+            <div className="TopInput">
+                <input
+                    type="text"
+                    placeholder="City"
+                    maxLength="50"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    />
+                <input
                 type="text"
-                placeholder="City"
+                placeholder="Country"
                 maxLength="50"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
                 />
-            <div id="label">
+                <button type="submit">Get Weather</button>
+            </div>
+            <div className="BottomLabel">
                 <label>
                     <input
                         type="radio"
@@ -86,15 +97,14 @@ const Forecast = () => {
                         onChange={(e) => setUnit(e.target.value)}
                         />
                         Celcius
-                </label>  
-            </div> 
-            <button type="submit">Get Forecast</button>      
+                </label>
+            </div>            
 
         </form>
 
 
         
-        <Conditions
+        <ConditionsBonus
             responseObj={responseObj}
             error={error}
             loading={loading}
@@ -103,4 +113,4 @@ const Forecast = () => {
    )
 }
 
-export default Forecast;
+export default ForecastBonus;
