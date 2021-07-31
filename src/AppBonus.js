@@ -6,7 +6,7 @@ function AppBonus() {
  return (
    <div className="AppBonus">
      <div className="AppLeft">
-       <div id="AppTitle">Weather Finder Bonus</div>
+       <div id="AppTitle1">Weather Finder Bonus</div>
        <div id="AppText">Find out temperature, conditions and more</div>
      </div>
      <div className="AppRight">

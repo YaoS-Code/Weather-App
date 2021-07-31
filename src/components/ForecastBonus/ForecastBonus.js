@@ -27,8 +27,8 @@ const ForecastBonus = () => {
         
         
         const uriEncodedCity = encodeURIComponent(city);
-
-        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
+        const uriEncodecountry = encodeURIComponent(country);    
+        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}%2C%20${uriEncodecountry}`, {
             "method": "GET",
             "headers": {
             "x-rapidapi-key": "a194168a9emsh09d0e7896fb4cc2p158113jsnc406521d344d",
@@ -70,7 +70,7 @@ const ForecastBonus = () => {
                     />
                 <input
                 type="text"
-                placeholder="Country"
+                placeholder="Country Code"
                 maxLength="50"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}

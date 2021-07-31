@@ -7,8 +7,9 @@
 }
 
 #AppTitle{
-  margin-top: 20vh;
+  padding-top: 40vh;
   color:black;
   font-size: 3vw;
   text-align: center;
+  margin: 0;
 }
